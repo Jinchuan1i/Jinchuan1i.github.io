@@ -1,2 +1,2 @@
-# Jinchuan1i.github.io
+# jjc-li.github.io
 Personal Website
