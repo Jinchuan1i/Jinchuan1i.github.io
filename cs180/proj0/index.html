@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CS180 — Project 0 (Jefferson Li)</title>
   <style>
-    /* ---- Base layout (narrow, centered, phone-friendly) ---- */
     :root{
       --bg:#fbfbfd; --fg:#0f172a; --muted:#6b7280; --border:#e5e7eb; --link:#2563eb;
-      --max: 720px; --space: 18px; --radius: 12px;
+      --max: 960px; --space: 18px; --radius: 12px;
     }
     @media (prefers-color-scheme: dark){
       :root{ --bg:#0b0d10; --fg:#e5e7eb; --muted:#9aa0a6; --border:#243042; --link:#93c5fd; }
@@ -16,68 +15,38 @@
     *{ box-sizing:border-box; }
     body{
       margin:0; background:var(--bg); color:var(--fg);
-      font: 16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
     }
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: clamp(14px, 4vw, 24px);
-    }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: clamp(14px, 4vw, 24px); }
 
-    /* ---- Header ---- */
     header{ text-align:center; margin-bottom: 10px; }
-    h1{ margin: 0 0 6px; font-size: clamp(22px, 4.8vw, 30px); }
+    h1{ margin:0 0 6px; font-size: clamp(22px, 4.8vw, 30px); }
     .sub{ color:var(--muted); font-size: 0.98rem; }
-    hr.sep{ border:0; border-top:1px solid var(--border); margin: 16px 0 22px; }
+    hr.sep{ border:0; border-top:1px solid var(--border); margin:16px 0 22px; }
 
-    /* ---- Sections ---- */
     section{ margin: 22px 0; }
-    h2{ font-size: 1.12rem; margin: 0 0 10px; }
-    p{ margin: 8px 0 10px; }
+    h2{ font-size:1.12rem; margin:0 0 10px; }
+    p{ margin:8px 0 10px; }
     .card{
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      padding: clamp(12px, 2.5vw, 16px);
-      background: #fff;
+      border:1px solid var(--border); border-radius:var(--radius);
+      padding: clamp(12px, 2.5vw, 16px); background:#fff;
     }
-    @media (prefers-color-scheme: dark){
-      .card{ background: #0f1318; }
-    }
+    @media (prefers-color-scheme: dark){ .card{ background:#0f1318; } }
 
-    /* ---- Images & pairs ---- */
     figure{ margin:0; }
-    figcaption{ color:var(--muted); font-size: 0.92rem; margin-top: 6px; }
+    figcaption{ color:var(--muted); font-size:0.92rem; margin-top:6px; }
 
     img{
-      display:block;
-      width:100%;
-      height:auto;            /* never crop */
-      border:1px solid var(--border);
-      border-radius: 10px;
-      background:#00000006;
+      display:block; width:100%; height:auto;
+      border:1px solid var(--border); border-radius:10px; background:#00000006;
     }
-    /* if an image is very tall, cap on mobile while preserving aspect */
-    .fit{ max-height: 70vh; object-fit: contain; }
+    .fit{ max-height:70vh; object-fit:contain; }
 
-    .pair{
-      display:grid; gap: 10px;
-      grid-template-columns: 1fr 1fr;
-    }
-    @media (max-width: 760px){
-      .pair{ grid-template-columns: 1fr; }
-    }
+    .pair{ display:grid; gap:10px; grid-template-columns:1fr 1fr; }
+    @media (max-width:760px){ .pair{ grid-template-columns:1fr; } }
 
-    /* ---- Small TOC ---- */
-    .toc{
-      display:flex; flex-wrap:wrap; gap:10px;
-      padding:10px; border:1px dashed var(--border); border-radius:10px;
-      font-size:0.96rem; color:var(--muted);
-    }
-    .toc a{ color:var(--link); text-decoration:none; }
-    .toc a:hover{ text-decoration:underline; }
-
-    /* ---- Footer ---- */
-    footer{ margin: 26px 0 8px; text-align:center; color:var(--muted); font-size:0.95rem; }
+    footer{ margin:30px 0 8px; text-align:center; color:var(--muted); font-size:0.92rem; line-height:1.5; }
+    footer a{ color:var(--link); }
   </style>
 </head>
 <body>
@@ -87,18 +56,7 @@
       <h1>CS180 — Project 0</h1>
       <div class="sub">Jefferson Li (jjc-li)</div>
     </header>
-
     <hr class="sep" />
-
-    <!-- Simple structure for graders & readers -->
-    <nav class="toc card">
-      <span>Jump to:</span>
-      <a href="#overview">Overview</a> ·
-      <a href="#comp-a">Comparison A</a> ·
-      <a href="#comp-b1">Comparison B1</a> ·
-      <a href="#comp-b2">Comparison B2</a> ·
-      <a href="#dolly">Dolly Zoom</a>
-    </nav>
 
     <section id="overview" class="card">
       <h2>Overview</h2>
@@ -154,13 +112,18 @@
       <h2>Dolly Zoom (Animated)</h2>
       <figure>
         <img class="fit" src="./assets/anim.gif" alt="Dolly zoom animation" />
-        <figcaption>Constructed from frames <code>anim_1.png</code>–<code>anim_6.png</code>. Adjusted timing for readability.</figcaption>
+        <figcaption>Constructed from frames <code>anim_1.png</code>–<code>anim_6.png</code>.</figcaption>
       </figure>
     </section>
 
     <footer>
-      © Jefferson Li
+      <div>
+        <a href="/cs180/">← Back to CS180</a> • <a href="/">Portfolio</a>
+      </div>
+      <div>© 2025 Jefferson Li • Built with GitHub Pages • Last updated Sep 2, 2025</div>
+      <div>Contact: <a href="mailto:jjc-li@berkeley.edu">jjc-li@berkeley.edu</a></div>
     </footer>
+
   </div>
 </body>
 </html>
