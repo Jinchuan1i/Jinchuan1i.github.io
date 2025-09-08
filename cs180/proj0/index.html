@@ -3,79 +3,163 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CS 180 — Project 0</title>
-  <link rel="stylesheet" href="/assets/site.css" />
+  <title>CS180 — Project 0 (Jefferson Li)</title>
+  <style>
+    /* ---- Base layout (narrow, centered, phone-friendly) ---- */
+    :root{
+      --bg:#fbfbfd; --fg:#0f172a; --muted:#6b7280; --border:#e5e7eb; --link:#2563eb;
+      --max: 720px; --space: 18px; --radius: 12px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b0d10; --fg:#e5e7eb; --muted:#9aa0a6; --border:#243042; --link:#93c5fd; }
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font: 16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: clamp(14px, 4vw, 24px);
+    }
+
+    /* ---- Header ---- */
+    header{ text-align:center; margin-bottom: 10px; }
+    h1{ margin: 0 0 6px; font-size: clamp(22px, 4.8vw, 30px); }
+    .sub{ color:var(--muted); font-size: 0.98rem; }
+    hr.sep{ border:0; border-top:1px solid var(--border); margin: 16px 0 22px; }
+
+    /* ---- Sections ---- */
+    section{ margin: 22px 0; }
+    h2{ font-size: 1.12rem; margin: 0 0 10px; }
+    p{ margin: 8px 0 10px; }
+    .card{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(12px, 2.5vw, 16px);
+      background: #fff;
+    }
+    @media (prefers-color-scheme: dark){
+      .card{ background: #0f1318; }
+    }
+
+    /* ---- Images & pairs ---- */
+    figure{ margin:0; }
+    figcaption{ color:var(--muted); font-size: 0.92rem; margin-top: 6px; }
+
+    img{
+      display:block;
+      width:100%;
+      height:auto;            /* never crop */
+      border:1px solid var(--border);
+      border-radius: 10px;
+      background:#00000006;
+    }
+    /* if an image is very tall, cap on mobile while preserving aspect */
+    .fit{ max-height: 70vh; object-fit: contain; }
+
+    .pair{
+      display:grid; gap: 10px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 760px){
+      .pair{ grid-template-columns: 1fr; }
+    }
+
+    /* ---- Small TOC ---- */
+    .toc{
+      display:flex; flex-wrap:wrap; gap:10px;
+      padding:10px; border:1px dashed var(--border); border-radius:10px;
+      font-size:0.96rem; color:var(--muted);
+    }
+    .toc a{ color:var(--link); text-decoration:none; }
+    .toc a:hover{ text-decoration:underline; }
+
+    /* ---- Footer ---- */
+    footer{ margin: 26px 0 8px; text-align:center; color:var(--muted); font-size:0.95rem; }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <div class="brand">Project 0</div>
-      <nav class="nav">
-        <a href="/cs180/">CS 180</a>
-        <a href="/">Home</a>
-      </nav>
+  <div class="wrap">
+
+    <header>
+      <h1>CS180 — Project 0</h1>
+      <div class="sub">Jefferson Li (jjc-li)</div>
     </header>
 
-    <main>
-      <section class="card section">
-        <h1>Overview</h1>
-        <p class="muted">Brief description of the task and what you implemented.</p>
-      </section>
+    <hr class="sep" />
 
-      <section class="card section">
-        <h2>Comparison A</h2>
-        <div class="grid-2">
-          <figure>
-            <img class="fit" src="./assets/a_close.png" alt="Before (A)" loading="lazy" />
-            <figcaption>Before (A)</figcaption>
-          </figure>
-          <figure>
-            <img class="fit" src="./assets/a_far.png" alt="After (A)" loading="lazy" />
-            <figcaption>After (A)</figcaption>
-          </figure>
-        </div>
-      </section>
+    <!-- Simple structure for graders & readers -->
+    <nav class="toc card">
+      <span>Jump to:</span>
+      <a href="#overview">Overview</a> ·
+      <a href="#comp-a">Comparison A</a> ·
+      <a href="#comp-b1">Comparison B1</a> ·
+      <a href="#comp-b2">Comparison B2</a> ·
+      <a href="#dolly">Dolly Zoom</a>
+    </nav>
 
-      <section class="card section">
-        <h2>Comparison B1</h2>
-        <div class="grid-2">
-          <figure>
-            <img class="fit" src="./assets/b1_close.png" alt="Before (B1)" loading="lazy" />
-            <figcaption>Before (B1)</figcaption>
-          </figure>
-          <figure>
-            <img class="fit" src="./assets/b1_far.png" alt="After (B1)" loading="lazy" />
-            <figcaption>After (B1)</figcaption>
-          </figure>
-        </div>
-      </section>
+    <section id="overview" class="card">
+      <h2>Overview</h2>
+      <p>
+        One-paragraph summary of what you implemented for Project 0 and what each section below shows.
+        Keep this short and focused on results.
+      </p>
+    </section>
 
-      <section class="card section">
-        <h2>Comparison B2</h2>
-        <div class="grid-2">
-          <figure>
-            <img class="fit" src="./assets/b2_close.png" alt="Before (B2)" loading="lazy" />
-            <figcaption>Before (B2)</figcaption>
-          </figure>
-          <figure>
-            <img class="fit" src="./assets/b2_far.png" alt="After (B2)" loading="lazy" />
-            <figcaption>After (B2)</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="card section">
-        <h2>Dolly Zoom (Animated)</h2>
+    <section id="comp-a" class="card">
+      <h2>Comparison A</h2>
+      <div class="pair">
         <figure>
-          <img class="fit" src="./assets/anim.gif" alt="Dolly zoom animation" />
-          <figcaption class="muted">Built from frames anim_1.png–anim_6.png.</figcaption>
+          <img class="fit" src="./assets/a_close.png" alt="Comparison A — close" loading="lazy" />
+          <figcaption>Before (A)</figcaption>
         </figure>
-      </section>
-    </main>
+        <figure>
+          <img class="fit" src="./assets/a_far.png" alt="Comparison A — far" loading="lazy" />
+          <figcaption>After (A)</figcaption>
+        </figure>
+      </div>
+    </section>
 
-    <footer class="footer">
-      <span class="muted">© Jefferson Li</span>
-      <a class="muted" href="/cs180/">Back to CS 180</a>
+    <section id="comp-b1" class="card">
+      <h2>Comparison B1</h2>
+      <div class="pair">
+        <figure>
+          <img class="fit" src="./assets/b1_close.png" alt="Comparison B1 — close" loading="lazy" />
+          <figcaption>Before (B1)</figcaption>
+        </figure>
+        <figure>
+          <img class="fit" src="./assets/b1_far.png" alt="Comparison B1 — far" loading="lazy" />
+          <figcaption>After (B1)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="comp-b2" class="card">
+      <h2>Comparison B2</h2>
+      <div class="pair">
+        <figure>
+          <img class="fit" src="./assets/b2_close.png" alt="Comparison B2 — close" loading="lazy" />
+          <figcaption>Before (B2)</figcaption>
+        </figure>
+        <figure>
+          <img class="fit" src="./assets/b2_far.png" alt="Comparison B2 — far" loading="lazy" />
+          <figcaption>After (B2)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="dolly" class="card">
+      <h2>Dolly Zoom (Animated)</h2>
+      <figure>
+        <img class="fit" src="./assets/anim.gif" alt="Dolly zoom animation" />
+        <figcaption>Constructed from frames <code>anim_1.png</code>–<code>anim_6.png</code>. Adjusted timing for readability.</figcaption>
+      </figure>
+    </section>
+
+    <footer>
+      © Jefferson Li
     </footer>
   </div>
 </body>
