@@ -1,17 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CS 180 — Portfolio</title>
+  <link rel="stylesheet" href="/assets/site.css" />
 </head>
 <body>
-    <h1>Welcome to My CS180 Portfolio!</h1>
-    <a href="./0/index.html">Project 0</a>
-    <a href="./1/index.html">Project 1</a>
+  <div class="container">
+    <header class="header">
+      <div class="brand">CS 180 Portfolio</div>
+      <nav class="nav">
+        <a href="/">Home</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <h1>CS 180 Projects</h1>
+      <p class="muted">Links to each assignment and write-up.</p>
+
+      <div class="list" style="margin-top:12px">
+        <div class="item">
+          <div><strong>Project 0</strong><br><span class="muted">Two comparisons + dolly zoom GIF</span></div>
+          <a class="btn" href="/cs180/proj0/">View</a>
+        </div>
+        <!-- Duplicate the block above for future projects -->
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span class="muted">Back to <a href="/">home</a></span>
+      <a class="muted" href="https://cal-cs180.github.io/fa25/hw/proj0/index.html" target="_blank" rel="noopener">Course page</a>
+    </footer>
+  </div>
 </body>
 </html>

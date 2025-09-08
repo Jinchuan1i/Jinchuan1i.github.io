@@ -1,95 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- The page uses UTF-8 characters and scales on mobile -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>CS180 – Project 0</title>
-
-  <!-- Tiny, readable styles: a max width, comfortable margins, and simple side-by-side layout -->
-  <style>
-    body { font-family: system-ui, Arial, sans-serif; margin: 24px; line-height: 1.6; max-width: 900px; }
-    h1, h2 { margin: 0 0 12px; }
-    section { margin: 24px 0; }
-    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    figure { margin: 0; }
-    figcaption { font-size: 0.95rem; color: #555; margin-top: 6px; }
-    img { width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; }
-    .note { font-size: 0.95rem; color: #666; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CS 180 — Project 0</title>
+  <link rel="stylesheet" href="/assets/site.css" />
 </head>
 <body>
-  <!-- Page title and quick navigation -->
-  <h1>CS180 – Project 0</h1>
-  <p class="note">
-    Jefferson Li (jjc-li) • <a href="/cs180">Back to CS180 Portfolio</a>
-  </p>
+  <div class="container">
+    <header class="header">
+      <div class="brand">Project 0</div>
+      <nav class="nav">
+        <a href="/cs180/">CS 180</a>
+        <a href="/">Home</a>
+      </nav>
+    </header>
 
-  <!-- Part 1: Comparison A -->
-  <section>
-    <h2>Comparison A</h2>
-    <div class="row">
-      <figure>
-        <!-- Replace with your real file (PNG/JPG) -->
-        <img src="./assets/a_close.png" alt="Before A">
-        <figcaption>Before (A)</figcaption>
-      </figure>
-      <figure>
-        <img src="./assets/a_far.png" alt="After A">
-        <figcaption>After (A)</figcaption>
-      </figure>
-    </div>
-  </section>
+    <main>
+      <section class="card">
+        <h1>Project 0</h1>
+        <p class="muted">Brief description of the task and what you implemented.</p>
+      </section>
 
-  <!-- Part 2: Comparison B -->
-  <section>
-    <h2>Comparison B1</h2>
-    <div class="row">
-      <figure>
-        <img src="./assets/b1_close.png" alt="Before B">
-        <figcaption>Before (B)</figcaption>
-      </figure>
-      <figure>
-        <img src="./assets/b1_far.png" alt="After B">
-        <figcaption>After (B)</figcaption>
-      </figure>
-    </div>
+      <section class="card">
+        <h2>Comparison A</h2>
+        <div class="grid-2">
+          <figure>
+            <img src="./assets/a_close.png" alt="Before (A)" />
+            <figcaption>Before (A)</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/a_far.png" alt="After (A)" />
+            <figcaption>After (A)</figcaption>
+          </figure>
+        </div>
+      </section>
 
-    <h2>Comparison B2</h2>
-    <div class="row">
-      <figure>
-        <img src="./assets/b2_close.png" alt="Before B">
-        <figcaption>Before (B)</figcaption>
-      </figure>
-      <figure>
-        <img src="./assets/b2_far.png" alt="After B">
-        <figcaption>After (B)</figcaption>
-      </figure>
-    </div>
-  </section>
+      <section class="card">
+        <h2>Comparison B1</h2>
+        <div class="grid-2">
+          <figure>
+            <img src="./assets/b1_close.png" alt="Before (B1)" />
+            <figcaption>Before (B1)</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/b1_far.png" alt="After (B1)" />
+            <figcaption>After (B1)</figcaption>
+          </figure>
+        </div>
+      </section>
 
-  <!-- Part 3: Animated GIF from multiple pictures -->
-  <section>
-    <h2>Dolly Zoom (Animated)</h2>
-    <figure>
-      <img src="./assets/anim.gif" alt="Dolly zoom animation made from frames anim_1.png to anim_6.png">
-      <figcaption>
-        Constructed from frames <code>anim_1.png</code>–<code>anim_6.png</code>. 
-        Frame delay = 12/100s (adjustable).
-      </figcaption>
-    </figure>
-  </section>
-  
+      <section class="card">
+        <h2>Comparison B2</h2>
+        <div class="grid-2">
+          <figure>
+            <img src="./assets/b2_close.png" alt="Before (B2)" />
+            <figcaption>Before (B2)</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/b2_far.png" alt="After (B2)" />
+            <figcaption>After (B2)</figcaption>
+          </figure>
+        </div>
+      </section>
 
-  <!-- Simple footer -->
-  <section>
-    <p class="note">
-      Instructions for Project 0: 
-      <a href="https://cal-cs180.github.io/fa25/hw/proj0/index.html" target="_blank" rel="noopener">
-        official page
-      </a>.
-    </p>
-  </section>
+      <section class="card">
+        <h2>Dolly Zoom (Animated)</h2>
+        <figure>
+          <img src="./assets/anim.gif" alt="Dolly zoom animation from frames anim_1.png–anim_6.png" />
+          <figcaption class="muted">Built from frames <code>anim_1.png</code>–<code>anim_6.png</code>.</figcaption>
+        </figure>
+      </section>
+
+      <section class="card">
+        <h2>Notes</h2>
+        <p class="muted">
+          Source images live in <code>/cs180/proj0/assets/</code>.
+          Official instructions: <a href="https://cal-cs180.github.io/fa25/hw/proj0/index.html" target="_blank" rel="noopener">Project 0</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="muted">© Jefferson Li</span>
+      <a class="muted" href="/cs180/">Back to CS 180</a>
+    </footer>
+  </div>
 </body>
 </html>
