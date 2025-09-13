@@ -24,6 +24,10 @@ title: Project 1 Assets — Downloads
   <li><a href="./images_out_green/self_portrait_aligned.jpg">self_portrait_aligned.jpg</a></li>
   <li><a href="./images_out_green/siren_aligned.jpg">siren_aligned.jpg</a></li>
   <li><a href="./images_out_green/three_generations_aligned.jpg">three_generations_aligned.jpg</a></li>
+  <li><a href="./images_out_green/Borodino's_church_aligned.jpg">Borodino's_church_aligned.jpg</a></li>
+  <li><a href="./images_out_green/canal_aligned.jpg">canal_aligned.jpg</a></li>
+  <li><a href="./images_out_green/park_aligned.jpg">park_aligned.jpg</a></li>
+  <li><a href="./images_out_green/Vitebsk_aligned.jpg">Vitebsk_aligned.jpg</a></li>
   
 </ul>
 
@@ -37,4 +41,3 @@ title: Project 1 Assets — Downloads
 <ul>
   <li><a href="./offsets.csv">offsets.csv</a></li>
 </ul>
-

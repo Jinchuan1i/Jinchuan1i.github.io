@@ -13,3 +13,7 @@ filename,method,dx_g,dy_g,dx_r,dy_r,dx_b,dy_b,out_path
 ./data/images_in/siren.tif,pyramid,0,0,-18,47,6,-49,./data/images_out_green/siren_aligned.jpg
 ./data/images_in/three_generations.tif,pyramid,0,0,-3,58,-13,-53,./data/images_out_green/three_generations_aligned.jpg
 ./data/images_in/tobolsk.jpg,single,0,0,1,4,-3,-3,./data/images_out_green/tobolsk_aligned.jpg
+./data/images_in_own_choices/Borodino's_church.tif,pyramid,0,0,14,59,-25,-45,./data/images_out_green/Borodino's_church_aligned.jpg
+./data/images_in_own_choices/canal.tif,pyramid,0,0,6,81,-20,-74,./data/images_out_green/canal_aligned.jpg
+./data/images_in_own_choices/park.tif,pyramid,0,0,0,119,-3,-44,./data/images_out_green/park_aligned.jpg
+./data/images_in_own_choices/Vitebsk.tif,pyramid,0,0,-11,45,7,-37,./data/images_out_green/Vitebsk_aligned.jpg
