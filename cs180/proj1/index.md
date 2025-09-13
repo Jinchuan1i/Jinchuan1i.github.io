@@ -15,11 +15,11 @@ last_updated: Sep 12, 2025
   </p>
   <div class="pair" style="margin-top:10px;">
     <figure>
-      <a href="./assets/example/church.tif"><img class="fit" src="./assets/example/church.tif" alt="Original glass plate (TIF)" /></a>
-      <figcaption>Original glass plate (TIF). Some browsers may not display TIF inline; click to download.</figcaption>
+      <a href="./assets/example/monastery.jpg"><img class="fit" src="./assets/example/monastery.jpg" alt="Original glass plate" /></a>
+      <figcaption>Original glass plate.</figcaption>
     </figure>
     <figure>
-      <img class="fit" src="./assets/example/church_aligned.jpg" alt="Colorized church" />
+      <img class="fit" src="./assets/example/monastery_aligned.jpg" alt="Colorized Monastery" />
       <figcaption>Aligned and colorized result.</figcaption>
     </figure>
   </div>
@@ -37,10 +37,6 @@ last_updated: Sep 12, 2025
     and align from coarse to fine: estimate at the smallest scale in a small window, upsample offsets, then refine at higher
     resolutions with smaller local windows. I crop borders slightly to avoid misleading edges.
   </p>
-  <p>
-    To further reduce sensitivity to illumination and fine noise, I optionally run NCC on Sobel gradient magnitude images — this
-    emphasizes structure and edges over raw intensities and helps avoid local maxima, especially on challenging images like Emir.
-  </p>
 </section>
 
 <section id="results">
@@ -48,7 +44,7 @@ last_updated: Sep 12, 2025
   <p class="muted">Images are produced from <code>assets/images_out_green</code>. Captions list offsets (R: dx, dy; B: dx, dy) relative to G.</p>
 
   <h3 id="small">Small images (JPG)</h3>
-  <section class="grid grid-2">
+  <section class="grid">
     <article class="card"><figure>
       <img class="fit" src="./assets/images_out_green/cathedral_aligned.jpg" alt="cathedral" />
       <figcaption>cathedral — R:(1, 7), B:(-2, -5)</figcaption>
@@ -64,7 +60,7 @@ last_updated: Sep 12, 2025
   </section>
 
   <h3 id="large">Large images (TIFF)</h3>
-  <section class="grid grid-2">
+  <section class="grid">
     <article class="card"><figure>
       <img class="fit" src="./assets/images_out_green/church_aligned.jpg" alt="church" />
       <figcaption>church — R:(-8, 33), B:(-4, -25)</figcaption>
@@ -114,7 +110,7 @@ last_updated: Sep 12, 2025
 </section>
 
 <section id="discussion">
-  <h2 id="discussion">Discussion</h2>
+  <h2 id="discussion">Discussion: Emir and robust alignment</h2>
   <p>
     Coarse‑to‑fine NCC works well overall, but Emir is particularly challenging. With the blue channel as reference, NCC can lock
     onto a strong yet incorrect correlation due to low contrast and color differences across plates, yielding a local maximum and
@@ -141,6 +137,6 @@ last_updated: Sep 12, 2025
 <section id="assets">
   <h2 id="assets">Assets</h2>
   <p>
-    Notebook with implementation notes: <a href="./assets/RGB_Alignment_Clean.ipynb">assets/RGB_Alignment_Clean.ipynb</a>.
+    Offsets file: <a href="./assets/offsets.csv">assets/offsets.csv</a>. Browse and download larger results here: <a href="./assets/">assets/</a>.
   </p>
 </section>
