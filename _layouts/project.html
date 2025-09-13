@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<section class="project-hero">
+  <div class="crumbs">
+    <a href="{{ site.baseurl }}/">Home</a> · <a href="{{ site.baseurl }}/cs180/">CS180</a>
+  </div>
+  <h1>{{ page.title }}</h1>
+  {% if page.subtitle %}<p class="muted">{{ page.subtitle }}</p>{% endif %}
+</section>
+
+<div class="project-layout">
+  <aside class="project-sidebar" id="toc">
+    <div class="toc-title">Sections</div>
+    <nav class="toc-list"><!-- JS will fill with H2 anchors --></nav>
+  </aside>
+
+  <article class="project-main">
+    {{ content }}
+  </article>
+</div>
+
+<script>
+/* Build a simple TOC from h2 headings inside .project-main */
+(function(){
+  const main = document.querySelector('.project-main');
+  const toc = document.querySelector('.toc-list');
+  if (!main || !toc) return;
+  const hs = main.querySelectorAll('h2[id]');
+  hs.forEach(h => {
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    toc.appendChild(a);
+  });
+})();
+</script>
