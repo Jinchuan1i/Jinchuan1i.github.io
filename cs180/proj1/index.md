@@ -15,11 +15,11 @@ last_updated: Sep 12, 2025
   </p>
   <div class="pair" style="margin-top:10px;">
     <figure>
-      <a href="./assets/example/church.tif"><img class="fit" src="./assets/example/church.tif" alt="Original glass plate (TIF)" /></a>
-      <figcaption>Original glass plate (TIF). Some browsers may not display TIF inline; click to download.</figcaption>
+      <img class="fit" src="./assets/example/monastery.jpg" alt="Original glass plate (monastery)" />
+      <figcaption>Original glass plate (JPG composite of B, G, R).</figcaption>
     </figure>
     <figure>
-      <img class="fit" src="./assets/example/church_aligned.jpg" alt="Colorized church" />
+      <img class="fit" src="./assets/example/monastery_aligned.jpg" alt="Colorized monastery" />
       <figcaption>Aligned and colorized result.</figcaption>
     </figure>
   </div>
@@ -37,10 +37,7 @@ last_updated: Sep 12, 2025
     and align from coarse to fine: estimate at the smallest scale in a small window, upsample offsets, then refine at higher
     resolutions with smaller local windows. I crop borders slightly to avoid misleading edges.
   </p>
-  <p>
-    To further reduce sensitivity to illumination and fine noise, I optionally run NCC on Sobel gradient magnitude images — this
-    emphasizes structure and edges over raw intensities and helps avoid local maxima, especially on challenging images like Emir.
-  </p>
+  
 </section>
 
 <section id="results">
@@ -133,21 +130,34 @@ last_updated: Sep 12, 2025
 </section>
 
 <section id="discussion">
-  <h2 id="discussion">Discussion</h2>
+  <h2 id="discussion">Discussion: Emir and robust alignment</h2>
   <p>
-    Coarse‑to‑fine alignment is robust for high‑resolution plates where large displacements would be expensive to search at
-    full scale. Using green as the anchor generally works well; challenging cases tend to have low‑contrast channels or strong
-    brightness differences across plates. Further improvements could include gradient‑domain matching (NCC on edges) or subpixel
-    refinement after integer alignment.
+    Coarse‑to‑fine NCC works well overall, but Emir is particularly challenging. With the blue channel as reference, NCC can lock
+    onto a strong yet incorrect correlation due to low contrast and color differences across plates, yielding a local maximum and
+    visible color fringing. Using green as the reference and cropping noisy borders improves stability.
   </p>
-  <p class="muted">
-    Artifacts: residual color fringing near borders and moving objects; simple border cropping mitigates most.
+  <div class="pair" style="margin-top:10px;">
+    <figure>
+      <img class="fit" src="./assets/emir/emir_aligned.jpg" alt="Emir aligned (green reference)" />
+      <figcaption>Aligned to green — good facial alignment and crisp edges.</figcaption>
+    </figure>
+    <figure>
+      <img class="fit" src="./assets/emir/emir_out_blue.jpg" alt="Emir misaligned (blue reference)" />
+      <figcaption>Aligned to blue — local maximum; strong color fringes.</figcaption>
+    </figure>
+  </div>
+  <p>
+    A robustness trick is to run NCC on Sobel gradient magnitude rather than raw intensities: compute horizontal/vertical
+    derivatives, take the magnitude, and normalize each patch before correlation. This emphasizes shared structure (edges and
+    contours) and deemphasizes lighting differences and flat regions, helping escape the bad maximum on Emir. Combined with border
+    cropping and a pyramid search, this yields reliable alignment.
   </p>
+  <p class="muted">Artifacts: residual color fringing near borders and moving objects; border cropping mitigates most.</p>
 </section>
 
 <section id="assets">
   <h2 id="assets">Assets</h2>
   <p>
-    Notebook with implementation notes: <a href="./assets/RGB_Alignment_Clean.ipynb">assets/RGB_Alignment_Clean.ipynb</a>.
+    Offsets file: <a href="./assets/offsets.csv">assets/offsets.csv</a>. Browse and download larger results here: <a href="./assets/">assets/</a>.
   </p>
 </section>
