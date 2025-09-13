@@ -1,0 +1,10 @@
+# Disable default themes so your CSS rules the look
+theme: null
+
+# Site-wide variables you can use in layouts
+title: "Jefferson Li"
+owner: "Jefferson Li"
+
+# If this is a user site (jjc-li.github.io), keep baseurl blank.
+# If it's a project site (repo pages), set baseurl: "/my-repo-name"
+baseurl: ""
