@@ -40,6 +40,8 @@
     display:grid; gap:14px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+  /* Two-column grid for larger media */
+  .grid-2{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   @media (max-width: 980px){ .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 640px){ .grid{ grid-template-columns: 1fr; } }
   
@@ -81,6 +83,11 @@
   }
   .fit{ max-height: 70vh; object-fit: contain; }
   .selfie-sm{ width: 80%; margin: 0 auto; }
+
+  /* Crop/zoom helper for showing details */
+  .crop{ overflow:hidden; border:1px solid var(--border); border-radius:10px; background:#00000006; }
+  .crop img{ width:100%; height:auto; object-fit: cover; }
+  .zoom2 img{ transform: scale(2); transform-origin:center; }
   
   /* Simple “button” link */
   .btn{
