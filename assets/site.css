@@ -19,9 +19,10 @@
     border-bottom:1px solid var(--border);
     background:#fff;
   }
-  .site-header .container{ display:flex; align-items:center; justify-content:space-between; gap:14px; }
-  .brand{ font-weight:700; letter-spacing:.2px; }
-  .topnav a{ margin-left:14px; }
+  .site-header .container{ display:flex; align-items:center; justify-content:flex-start; gap:18px; }
+  .brand{ font-weight:800; letter-spacing:.2px; font-size: clamp(18px, 2.2vw, 22px); }
+  .topnav{ display:flex; align-items:center; gap:16px; margin-left:6px; }
+  .topnav a{ margin: 0; font-size: clamp(16px, 2vw, 18px); font-weight:600; }
   
   .site-footer{
     border-top:1px solid var(--border);
@@ -79,6 +80,7 @@
     display:block; width:100%; height:auto; border:1px solid var(--border); border-radius:10px; background:#00000006;
   }
   .fit{ max-height: 70vh; object-fit: contain; }
+  .selfie-sm{ width: 80%; margin: 0 auto; }
   
   /* Simple “button” link */
   .btn{

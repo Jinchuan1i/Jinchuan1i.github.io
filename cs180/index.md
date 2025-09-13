@@ -14,7 +14,7 @@ last_updated: Sep 12, 2025
 
 <section class="grid">
   <article class="card">
-    <h3><a href="{{ '/cs180/proj0/' | relative_url }}">CS180 — Project 0</a></h3>
+    <h3><a href="{{ '/cs180/proj0/' | relative_url }}">Project 0: Becoming Friends with Your Camera</a></h3>
     <div class="muted">Perspective, compression, and dolly zoom</div>
     <div class="meta">Updated: Sep 2, 2025</div>
   </article>
