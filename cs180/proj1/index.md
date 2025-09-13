@@ -104,11 +104,6 @@ last_updated: Sep 12, 2025
     <article class="card"><figure>
       <img class="fit" src="./assets/images_out_green/three_generations_aligned.jpg" alt="three_generations" />
       <figcaption>three_generations — R:(-3, 58), B:(-13, -53)</figcaption>
-    </figure></article>
-  </section>
-
-  <h3 id="own-choices">Own choices (TIFF)</h3>
-  <section class="grid">
     <article class="card"><figure>
       <img class="fit" src="./assets/images_out_green/Borodino's_church_aligned.jpg" alt="Borodino's_church" />
       <figcaption>Borodino's_church — R:(14, 59), B:(-25, -45)</figcaption>
