@@ -8,10 +8,10 @@ last_updated: Sep 12, 2025
 <section id="overview">
   <h2 id="overview">Overview</h2>
   <p>
-    In this warm‑up assignment, I examine how camera distance and focal length affect portraits, how changing viewpoint can exaggerate or compress architectural geometry, and how a dolly zoom keeps the subject size roughly constant while the background stretches or compresses.
+    In this project, I examine how camera distance and focal length affect portraits, how changing viewpoint can exaggerate or compress architectural geometry, and how a dolly zoom keeps the subject size roughly constant while the background stretches or compresses.
   </p>
   <p>
-    The key principle is that perspective depends on camera position, not focal length. Zoom controls framing, but only moving the camera changes the relative sizes of near and far objects. Each part below isolates these effects by varying one factor at a time and matching framing when needed.
+    The key principle is that perspective depends on camera position. Zoom controls framing, but only moving the camera changes the relative sizes of near and far objects. Each part below isolates these effects by varying one factor at a time and matching framing when needed.
   </p>
 </section>
 
@@ -30,9 +30,6 @@ last_updated: Sep 12, 2025
       <figcaption>Step back, 120mm @ 300 cm</figcaption>
     </figure>
   </div>
-  <p>
-    Observations: the close shot widens the face and enlarges the nose; the farther shot keeps proportions closer to how we see people at normal viewing distances. Matching head size in pixels does not fix perspective — only camera distance does.
-  </p>
 </section>
 
 <section id="part2">
@@ -47,7 +44,10 @@ last_updated: Sep 12, 2025
     <figure><img class="fit" src="./assets/b1_far.png?v=2" alt="L&S far" /><figcaption>Far away</figcaption></figure>
   </div>
   <p>
-    Close: verticals converge more and the facade tapers noticeably. Far: lines look more parallel and the structure reads flatter; distant background elements appear larger relative to the subject.
+    Close: verticals converge more and the facade tapers noticeably. 
+  </p>
+  <p>
+    Far: lines look more parallel and the structure reads flatter; distant background elements appear larger relative to the subject.
   </p>
 
   <h3 id="b2">J. Robert Oppenheimer’s Office</h3>
