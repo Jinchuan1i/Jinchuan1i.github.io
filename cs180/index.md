@@ -18,4 +18,9 @@ last_updated: Sep 12, 2025
     <div class="muted">Perspective, compression, and dolly zoom</div>
     <div class="meta">Updated: Sep 2, 2025</div>
   </article>
+  <article class="card">
+    <h3><a href="{{ '/cs180/proj1/' | relative_url }}">Project 1: Colorizing the Prokudin‑Gorskii Collection</a></h3>
+    <div class="muted">Aligning B, G, R channels with pyramid search</div>
+    <div class="meta">Updated: Sep 12, 2025</div>
+  </article>
 </section>

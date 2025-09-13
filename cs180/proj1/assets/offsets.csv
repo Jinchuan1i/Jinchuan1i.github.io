@@ -1,0 +1,15 @@
+filename,method,dx_g,dy_g,dx_r,dy_r,dx_b,dy_b,out_path
+./data/images_in/cathedral.jpg,single,0,0,1,7,-2,-5,./data/images_out_green/cathedral_aligned.jpg
+./data/images_in/church.tif,pyramid,0,0,-8,33,-4,-25,./data/images_out_green/church_aligned.jpg
+./data/images_in/emir.tif,pyramid,0,0,17,57,-24,-49,./data/images_out_green/emir_aligned.jpg
+./data/images_in/harvesters.tif,pyramid,0,0,-3,65,-16,-59,./data/images_out_green/harvesters_aligned.jpg
+./data/images_in/icon.tif,pyramid,0,0,5,48,-17,-41,./data/images_out_green/icon_aligned.jpg
+./data/images_in/italil.tif,pyramid,0,0,15,38,-21,-38,./data/images_out_green/italil_aligned.jpg
+./data/images_in/lastochikino.tif,pyramid,0,0,-7,78,2,2,./data/images_out_green/lastochikino_aligned.jpg
+./data/images_in/lugano.tif,pyramid,0,0,-13,52,16,-41,./data/images_out_green/lugano_aligned.jpg
+./data/images_in/melons.tif,pyramid,0,0,4,96,-10,-81,./data/images_out_green/melons_aligned.jpg
+./data/images_in/monastery.jpg,single,0,0,1,6,-2,3,./data/images_out_green/monastery_aligned.jpg
+./data/images_in/self_portrait.tif,pyramid,0,0,8,98,-29,-78,./data/images_out_green/self_portrait_aligned.jpg
+./data/images_in/siren.tif,pyramid,0,0,-18,47,6,-49,./data/images_out_green/siren_aligned.jpg
+./data/images_in/three_generations.tif,pyramid,0,0,-3,58,-13,-53,./data/images_out_green/three_generations_aligned.jpg
+./data/images_in/tobolsk.jpg,single,0,0,1,4,-3,-3,./data/images_out_green/tobolsk_aligned.jpg
