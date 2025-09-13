@@ -8,18 +8,18 @@ last_updated: Sep 12, 2025
 <section id="overview">
   <h2 id="overview">Overview</h2>
   <p>
-    This project colorizes grayscale glass plate negatives from the Prokudin‑Gorskii collection by aligning three channels
-    (B, G, R) into a single RGB image. I use the green channel as reference and estimate integer‑pixel offsets for red and blue.
-    For small JPGs I align at a single scale; for large TIFFs I use a coarse‑to‑fine image pyramid. Results and measured offsets
+    This project colorizes grayscale glass plate from the Prokudin‑Gorskii collection by aligning three channels
+    (Blue, Green, Red) into a single RGB image. I use the green channel as reference and estimate integer‑pixel offsets for red and blue.
+    For small JPGs, I align at a single scale. For large TIFFs, I use a coarse‑to‑fine image pyramid. Results and measured offsets
     are shown below.
   </p>
   <div class="pair" style="margin-top:10px;">
     <figure>
-      <img class="fit" src="./assets/example/monastery.jpg" alt="Original glass plate (monastery)" />
-      <figcaption>Original glass plate (JPG composite of B, G, R).</figcaption>
+      <a href="./assets/example/church.tif"><img class="fit" src="./assets/example/church.tif" alt="Original glass plate (TIF)" /></a>
+      <figcaption>Original glass plate (TIF). Some browsers may not display TIF inline; click to download.</figcaption>
     </figure>
     <figure>
-      <img class="fit" src="./assets/example/monastery_aligned.jpg" alt="Colorized monastery" />
+      <img class="fit" src="./assets/example/church_aligned.jpg" alt="Colorized church" />
       <figcaption>Aligned and colorized result.</figcaption>
     </figure>
   </div>
@@ -29,7 +29,7 @@ last_updated: Sep 12, 2025
   <h2 id="method">Method</h2>
   <p>
     I use Normalized Cross‑Correlation (NCC) to score translations between channels. For each candidate offset (dx, dy), I compute
-    correlation between zero‑mean, unit‑variance patches and select the maximum. NCC is robust to global intensity changes and
+    correlation between standardized pixels and select the maximum. NCC is robust to global intensity changes and
     works well on these historical plates.
   </p>
   <p>
@@ -37,7 +37,10 @@ last_updated: Sep 12, 2025
     and align from coarse to fine: estimate at the smallest scale in a small window, upsample offsets, then refine at higher
     resolutions with smaller local windows. I crop borders slightly to avoid misleading edges.
   </p>
-  
+  <p>
+    To further reduce sensitivity to illumination and fine noise, I optionally run NCC on Sobel gradient magnitude images — this
+    emphasizes structure and edges over raw intensities and helps avoid local maxima, especially on challenging images like Emir.
+  </p>
 </section>
 
 <section id="results">
@@ -108,29 +111,10 @@ last_updated: Sep 12, 2025
     </figure></article>
   </section>
 
-  <section>
-    <h3 id="emir-note">Emir: local maxima and robust matching</h3>
-    <p>
-      Emir is particularly challenging: NCC against the blue reference can get stuck in a local maximum due to low contrast and
-      color differences. Two fixes worked well for me: (1) use green as the reference and crop wider borders to ignore noisy edges;
-      (2) compute NCC on Sobel gradient magnitude to emphasize structure over intensity.
-    </p>
-    <div class="pair">
-      <figure>
-        <div class="crop zoom2"><img src="./assets/images_out_green/emir_aligned.jpg" alt="emir aligned (green ref)" /></div>
-        <figcaption>Aligned to green, cropped borders, NCC on gradients.</figcaption>
-      </figure>
-      <figure>
-        <div class="crop zoom2"><img src="./assets/emir_out_blue.jpg" alt="emir misaligned (blue ref)" /></div>
-        <figcaption>Blue reference can converge to a poor local maximum.</figcaption>
-      </figure>
-    </div>
-  </section>
-
 </section>
 
 <section id="discussion">
-  <h2 id="discussion">Discussion: Emir and robust alignment</h2>
+  <h2 id="discussion">Discussion</h2>
   <p>
     Coarse‑to‑fine NCC works well overall, but Emir is particularly challenging. With the blue channel as reference, NCC can lock
     onto a strong yet incorrect correlation due to low contrast and color differences across plates, yielding a local maximum and
@@ -139,11 +123,11 @@ last_updated: Sep 12, 2025
   <div class="pair" style="margin-top:10px;">
     <figure>
       <img class="fit" src="./assets/emir/emir_aligned.jpg" alt="Emir aligned (green reference)" />
-      <figcaption>Aligned to green — good facial alignment and crisp edges.</figcaption>
+      <figcaption>Aligned to green — good facial alignment.</figcaption>
     </figure>
     <figure>
       <img class="fit" src="./assets/emir/emir_out_blue.jpg" alt="Emir misaligned (blue reference)" />
-      <figcaption>Aligned to blue — local maximum; strong color fringes.</figcaption>
+      <figcaption>Aligned to blue — local maximum. strong color fringes.</figcaption>
     </figure>
   </div>
   <p>
@@ -152,12 +136,11 @@ last_updated: Sep 12, 2025
     contours) and deemphasizes lighting differences and flat regions, helping escape the bad maximum on Emir. Combined with border
     cropping and a pyramid search, this yields reliable alignment.
   </p>
-  <p class="muted">Artifacts: residual color fringing near borders and moving objects; border cropping mitigates most.</p>
 </section>
 
 <section id="assets">
   <h2 id="assets">Assets</h2>
   <p>
-    Offsets file: <a href="./assets/offsets.csv">assets/offsets.csv</a>. Browse and download larger results here: <a href="./assets/">assets/</a>.
+    Notebook with implementation notes: <a href="./assets/RGB_Alignment_Clean.ipynb">assets/RGB_Alignment_Clean.ipynb</a>.
   </p>
 </section>
