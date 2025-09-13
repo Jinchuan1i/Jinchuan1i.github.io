@@ -1,6 +1,6 @@
-:root{
+  :root{
     --bg:#fbfbfd; --fg:#0f172a; --muted:#6b7280; --border:#e5e7eb; --link:#2563eb;
-    --container: 1040px; --content: 920px;
+    --container: 1400px; --content: 1200px;
     --radius: 12px; --shadow: 0 1px 2px rgb(0 0 0 / 6%);
   }
   @media (prefers-color-scheme: dark){
@@ -57,7 +57,7 @@
   
   .project-layout{
     display:grid; gap:18px;
-    grid-template-columns: 220px 1fr; /* left TOC + main */
+    grid-template-columns: 260px 1fr; /* left TOC + main */
   }
   @media (max-width: 980px){ .project-layout{ grid-template-columns: 1fr; } }
   

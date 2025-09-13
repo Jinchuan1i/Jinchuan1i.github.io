@@ -5,20 +5,18 @@ last_updated: Sep 12, 2025
 ---
 
 <section class="hero">
-  <h1>Hi, I'm Jefferson.</h1>
+  <h1>Welcome</h1>
   <p class="muted">
-    This site collects coursework, projects, and notes.
+    This site hosts my completed computer science projects for CS 180: Intro to Computer Vision and Computational Photography at UC Berkeley. Materials will be updated as the semester progresses.
+  </p>
+  <p class="muted">
+    As of Fall 2025, this site is actively maintained. If you spot any typos or have suggestions, please email me at <a href="mailto:jinchuanli@berkeley.edu">jinchuanli@berkeley.edu</a>.
   </p>
 </section>
 
 <section class="grid">
-  {% assign items = site.projects | sort: "updated" | reverse %}
-  {% for p in items %}
   <article class="card">
-    <h3><a href="{{ (p.link | default: p.url) | relative_url }}">{{ p.title }}</a></h3>
-    {% if p.subtitle %}<div class="muted">{{ p.subtitle }}</div>{% endif %}
-    {% if p.blurb %}<div class="desc">{{ p.blurb }}</div>{% endif %}
-    {% if p.updated %}<div class="meta">Updated: {{ p.updated }}</div>{% endif %}
+    <h3><a href="{{ '/cs180/' | relative_url }}">CS180 — Projects</a></h3>
+    <div class="desc">Computer Vision and Computational Photography coursework.</div>
   </article>
-  {% endfor %}
 </section>
